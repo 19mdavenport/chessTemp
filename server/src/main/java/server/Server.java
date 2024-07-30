@@ -18,7 +18,7 @@ public class Server {
             userService = new UserService(new MySqlUserDAO(), auth);
             gameService = new GameService(new MySqlGameDAO(), auth);
         } catch (Exception e) {
-            throw new RuntimeException("Error: %s%n", e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
