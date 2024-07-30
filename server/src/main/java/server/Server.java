@@ -18,8 +18,7 @@ public class Server {
             userService = new UserService(new MySqlUserDAO(), auth);
             gameService = new GameService(new MySqlGameDAO(), auth);
         } catch (Exception e) {
-            System.out.printf("Error: %s%n", e.getMessage());
-            exit(1);
+            throw new RuntimeException("Error: %s%n", e.getMessage());
         }
     }
 
